@@ -32,16 +32,15 @@ function loadQuestion(index){
 
     // opzioni possono essere più di una
     q.options.forEach((opt, i) => {
-        
         // creo l'html
         const btn = document.createElement("button");
         // gli metto come testo il testo dell'opzione che sto ciclando
         btn.innerText = opt;
         // gli aggiungo classi in bootstrap per stilizzarlo
         btn.className = "btn w-100 mb-2 btn-outline-primary";
-        /* 
-            appendere un evento al bottone per controllare che sia la risposta corretta
-        */
+        // appendo al bottone un evento che mi richiama la funzione di controllo dell'opzione
+        btn.onclick = () => checkAnswers(i);
+
         // appendo l'html al mio contenitore delle opzioni
         optionsEl.appendChild(btn);
 
@@ -55,6 +54,27 @@ function loadQuestion(index){
 
 function checkAnswers(selected){
     const q = quizData[current];
+    
+    //prendere tutte le opzioni legate alla domanda
+    const buttons = optionsEl.querySelectorAll("button");
+ 
+    //ciclo le opzioni:
+    buttons.forEach((btn, i) =>{
+        btn.disabled = true; // disabilito il bottone
+        
+        if(i === q.correct){
+            btn.classList.replace("btn-outline-primary", "btn-success");
+        } else if (i === selected) { 
+            btn.classList.replace("btn-outline-primary", "btn-danger");
+        }
+    });
+
+    // incremento il punteggio se è quella giusta
+    if(selected === q.correct){
+        score++;
+    }
+    console.log(score);
+
 }
 
 
