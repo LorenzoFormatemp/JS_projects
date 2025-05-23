@@ -42,5 +42,25 @@ for(i = min; i <= max; i++){
 }
 
 
+/*  switch (true) {
+    case (i % 3 === 0 && i % 5 === 0):
+      paragraph.classList.add('brown');
+      paragraph.append(fizzBuzz);
+      break;
+
+    case (i % 3 === 0):
+      paragraph.classList.add('orange');
+      paragraph.append(fizz);
+      break;
+
+    case (i % 5 === 0):
+      paragraph.classList.add('green');
+      paragraph.append(buzz);
+      break;
+
+    default:
+      paragraph.append(i);
+} */
+
 
 
