@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background-color: darkcyan;
+    text-align: center;
+}
+h1{
+    color: white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.container{
+    margin: 0 auto;
+    width: 1000px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+}
+
+.container > p{
+    background-color: cadetblue;
+    width:100px;
+    height: 100px;
+}
+
+/* 
+    - fizz => orange
+    - buzz => green
+    - fizzbuzz => brown
+*/
+p.orange{
+    background-color: orange;
+}
+p.green{
+    background-color: green;
+}
+p.brown{
+    background-color: brown;
+}
